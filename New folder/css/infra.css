@@ -1,0 +1,222 @@
+*{
+    box-sizing: border-box;
+
+}
+body{
+    margin: 0;
+    padding: 0;
+    background-color: #05121F;
+    font-family: 'Roboto', sans-serif;
+    color:#fff;
+}
+.blue-text{
+    color:#0EDEDA;
+}
+.navbar-expand-lg .navbar-collapse{
+    justify-content:center;
+}
+.navbar{
+    background-color:#05121F;
+
+}
+.nav-item, .navbar-nav {
+    position:relative;
+    z-index: 2;
+}
+.nav-item .nav-link {
+    color: #FFF;
+font-size: 18px;
+font-style: normal;
+font-weight: 500;
+line-height: normal;
+position: relative;
+
+}
+/* .nav-link:before {
+    position:absolute;
+    bottom:0;
+    background:#ffffff;
+    height:2px;
+    display:block;
+    content:"";  
+    width:0;
+    transition:0.5s all ease-in;  
+  }
+  .nav-link:hover:before {
+    width:100%;
+  }
+  .nav-link:before {
+    bottom:0;
+    left:0;
+  } */
+.nav-btns{
+    display:flex;
+}
+.button-1 {
+    color: #fff;
+    border: 3px solid #0EDEDA;
+    background-image: -webkit-linear-gradient(30deg, #1363DF 50%, transparent 50%);
+    background-image: linear-gradient(30deg, #1363DF 50%, transparent 50%);
+    background-size: 500px;
+    background-repeat: no-repeat;
+    background-position: 0%;
+    -webkit-transition: background 300ms ease-in-out;
+    transition: background 300ms ease-in-out;
+  }
+  .button-1:hover {
+    background-position: 100%;
+    color: #0EDEDA;
+  }
+.login-btn{
+    background-color:#0EDEDA;
+    padding:8px 16px;
+    color:#FFF;
+    text-decoration:none;
+}
+.login-btn a{
+    color:#FFF;
+    text-decoration:none;
+    font-size: 14px;
+font-style: normal;
+font-weight: 500;
+line-height: 20px;
+}
+.start-btn{
+    background-color:#1363DF;
+    padding:8px 16px;
+    color:#FFF;
+    text-decoration:none;
+}
+.start-btn a{
+    color:#FFF;
+    text-decoration:none;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 20px;
+}
+header{
+    background-image: url(../Images/bg-infra.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    height:80vh;
+}
+.text-area{
+  position:relative;
+}
+header .text-area{
+    width:80%;
+    margin:0 auto;
+    margin-top:120px;
+}
+header h4{
+    color:  #A1A6AA;
+    font-size: 48px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+header h1{
+    color:#fff;
+    font-size: 111px;
+font-style: normal;
+font-weight: 500;
+line-height: normal;
+}
+
+/* cursor */
+
+  .dot {
+    position: fixed;
+    width: 8em;
+    height: 8rem;
+    fill: #1363df;
+    top: -4em;
+    left: -4em;
+    opacity: 0;
+    transform: scale(0);
+    transform-origin: 50% 50%;
+    -webkit-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
+    pointer-events: none;
+    z-index: 1;
+  }
+  /* cursor-end */
+  .who-container{
+    margin:80px 0;
+
+  }
+  .who-container .head-text{
+ display:flex;
+ margin-bottom:24px;
+  }
+  .who-container .head-text h4{
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+     }
+  .who-container .sub-text{
+    width:85%;
+  }
+  .who-container .sub-text p{
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: 43px;
+  }
+  /* gsap */
+  .line{
+    width: 70%;
+    height:90px;
+    position: relative;
+    overflow: hidden;
+  }
+  /* .line, .lineOne, .lineTwo {
+    position: absolute;
+    top: 0;
+  } */
+    .line span{
+      position: absolute;
+      font-size: 5rem;
+      line-height: 4.2rem;
+    }
+    .lineOne{
+      width: 70%;
+      height:90px;
+      position: relative;
+      overflow: hidden;
+    }
+      .lineOne span{
+        position: absolute;
+        
+        font-size: 5rem;
+        line-height: 4.2rem;
+      }
+      .lineTwo{
+        width: 70%;
+        height:90px;
+        position: relative;
+        overflow: hidden;
+      }
+        .lineTwo span{
+          position: absolute;
+          font-size: 5rem;
+          line-height: 4.2rem;
+        }
+        .main{
+          display:flex;
+          flex-direction:column;
+        
+        }
+    /* scroll */
+    .wrapper {
+      display: flex;
+    }
+    .demo-text .text {
+      font-size: clamp(4rem, 15vw, 8rem);
+      line-height: 1;
+      font-weight: 900;
+    }
