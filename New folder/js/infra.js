@@ -135,9 +135,10 @@ let tl1 = gsap.timeline({
 	scrollTrigger: {
 		    trigger: ".rating-container",
 		    pin: true,
-			start:"left",
-			end: "right",
+			start:"10% 80%",
+			end: "bottom 20%",
 		    scrub: true,
+			markers:true,
 		    
 		 
 		  }
