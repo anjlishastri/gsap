@@ -115,27 +115,37 @@ tl.from(".lineTwo span", {
 
 // scroll
 
-const showDemo = () => {
-  document.body.style.overflow = "auto";
-  document.scrollingElement.scrollTo(0, 0);
-  gsap.to(document.querySelector(".loader"), { autoAlpha: 0 });
+// gsap.registerPlugin(ScrollTrigger);
 
-  gsap.utils.toArray("section").forEach((section, index) => {
-    const w = section.querySelector(".wrapper");
-    const [x, xEnd] =
-      index % 2
-        ? ["100%", (w.scrollWidth - section.offsetWidth) * -1]
-        : [w.scrollWidth * -1, 0];
-    gsap.fromTo(
-      w,
-      { x },
-      {
-        x: xEnd,
-        scrollTrigger: {
-          trigger: section,
-          scrub: 0.5,
-        },
-      }
-    );
-  });
-};
+// let sections = gsap.utils.toArray(".panel");
+
+// gsap.to(sections, {
+//   xPercent: -100 * (sections.length - 1),
+//   ease: "none",
+//   scrollTrigger: {
+//     trigger: ".container",
+//     pin: true,
+//     scrub: 1,
+//     snap: 1 / (sections.length - 1),
+//     // base vertical scrolling on how wide the container is so it feels more natural.
+//     end: "+=3500",
+//   }
+// });
+let tl1 = gsap.timeline({
+	scrollTrigger: {
+		    trigger: ".rating-container",
+		    pin: true,
+			start:"left",
+			end: "right",
+		    scrub: true,
+		    
+		 
+		  }
+})
+tl1.to('.rating-container',{
+	x:500
+})
+
+
+
+

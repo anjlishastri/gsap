@@ -117,6 +117,7 @@ header h4 {
   font-style: normal;
   font-weight: 500;
   line-height: normal;
+  margin-bottom:20px;
 }
 header h1 {
   color: #fff;
@@ -158,6 +159,16 @@ header h1 {
   font-style: normal;
   font-weight: 400;
   line-height: normal;
+  position: relative;
+}
+.who-container .head-text h4:before {
+position:absolute;
+content:"";
+top: -7px;
+left: -13px;
+background-image: url(../Images/infra-icon.png);
+width:20px;
+height:20px;
 }
 .who-container .sub-text {
   width: 85%;
@@ -232,4 +243,64 @@ header h1 {
   font-size: clamp(4rem, 15vw, 8rem);
   line-height: 1;
   font-weight: 900;
+}
+.bottom-txt{
+  display:flex;
+  justify-content: space-between;
+  width:80%;
+  margin-top:50px;
+}
+.text{
+  width:60%;
+}
+.text p{
+  font-size: 24px;
+font-style: normal;
+font-weight: 400;
+line-height: 32px;
+color:#fff;
+
+}
+.rating-container{
+  padding:80px 0;
+}
+.rate-cont-main{
+  display:flex;
+}
+.rating-box{
+  display:flex;
+  align-items: center;
+  margin-right:50px;
+}
+.numberWrap h4{
+  font-size: 140px;
+font-style: normal;
+font-weight: 300;
+line-height: normal;
+letter-spacing: -2.8px;
+background: -webkit-linear-gradient(121deg, #00FEAF -32.59%, #1363DF 87.07%);
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+}
+.textWrap p{
+  font-size: 40px;
+font-style: normal;
+font-weight: 400;
+line-height: normal;
+}
+.card-wrap{
+  display:flex;
+}
+.card{
+  display: flex;
+  width: 566px;
+  min-height:374px;
+padding: 36px 32px;
+flex-direction: column;
+align-items: flex-start;
+gap: 24px;
+margin-right:30px;
+border-radius: 3px;
+border: 1px solid rgba(255, 255, 255, 0.10);
+background: rgba(255, 255, 255, 0.03);
 }
