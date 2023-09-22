@@ -115,37 +115,58 @@ tl.from(".lineTwo span", {
 
 // scroll
 
-// gsap.registerPlugin(ScrollTrigger);
+gsap.registerPlugin(ScrollTrigger);
 
-// let sections = gsap.utils.toArray(".panel");
+let sections = gsap.utils.toArray(".panel");
 
-// gsap.to(sections, {
-//   xPercent: -100 * (sections.length - 1),
-//   ease: "none",
-//   scrollTrigger: {
-//     trigger: ".container",
-//     pin: true,
-//     scrub: 1,
-//     snap: 1 / (sections.length - 1),
-//     // base vertical scrolling on how wide the container is so it feels more natural.
-//     end: "+=3500",
-//   }
-// });
-let tl1 = gsap.timeline({
-	scrollTrigger: {
-		    trigger: ".rating-container",
-		    pin: true,
-			start:"10% 80%",
-			end: "bottom 20%",
-		    scrub: true,
-			markers:true,
+gsap.to(sections, {
+  xPercent: -75 * (sections.length - 1),
+  ease: "none",
+  scrollTrigger: {
+    trigger: ".rating-container",
+    pin: true,
+    scrub: 1,
+	// markers:true,
+    snap: 1 / (sections.length - 1),
+    // base vertical scrolling on how wide the container is so it feels more natural.
+    end: "+=4000",
+  }
+});
+gsap.registerPlugin(ScrollTrigger);
+
+let section = gsap.utils.toArray(".card");
+
+gsap.to(section, {
+  xPercent: -75 * (sections.length - 1),
+  ease: "none",
+  scrollTrigger: {
+    trigger: ".card-container",
+    pin: true,
+    scrub: 1,
+	// markers:true,
+    snap: 1 / (sections.length - 1),
+
+    // base vertical scrolling on how wide the container is so it feels more natural.
+    end: "+=4000",
+  }
+});
+// let tl1 = gsap.timeline({
+// 	  x:-100,
+// 	scrollTrigger: {
+// 		    trigger: ".rating-container",
+// 		    pin: true,
+// 			start:"left 80%",
+// 			end: "top 20%",
+// 		    scrub: true,
+// 			markers:true,
+			
 		    
 		 
-		  }
-})
-tl1.to('.rating-container',{
-	x:500
-})
+// 		  }
+// })
+// tl1.to('.rating-container',{
+// 	x:100
+// })
 
 
 
