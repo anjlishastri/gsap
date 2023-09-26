@@ -11,12 +11,22 @@
       crossorigin="anonymous"
     />
    
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@100;200;300;400;500;600;700&display=swap"
       rel="stylesheet"
     />
+    <link rel="stylesheet" href="./css/style.css" />
     <link rel="stylesheet" href="./css/infra.css" />
   </head>
   <body>
@@ -100,29 +110,24 @@
         </div>
       </nav>
     </navbar>
-    <header>
+    <div id="banner">
+      <div class="backgrounds">
+        <span class="bg ai" style="background-image: url('Images/ai.jpg');"></span>
+        <span class="bg ml" style="background-image: url('Images/ml.jpg');"></span>
+        <span class="bg web3" style="background-image: url('Images/web3.jpg');"></span>
+      </div>
       <div class="container-fluid">
         <div class="row">
           <div class="col-md-12">
             <div class="text-area">
               <div class="top-txt">
                 <h4>Powering The Digital World With</h4>
-                <div class="main">
-                  <div class="line">
-                    <h1>
-                      <span>Artificial Intelligence</span>
-                    </h1>
-                  </div>
-                  <div class="lineOne">
-                    <h1>
-                      <span>Machine Learning</span>
-                    </h1>
-                  </div>
-                  <div class="lineTwo">
-                    <h1>
-                      <span>WEB3</span>
-                    </h1>
-                  </div>
+                <div id="animated-text">
+                  <h1>
+                    <span class="line">Artificial Intelligence</span>
+                    <span class="lineOne">Machine Learning</span>
+                    <span class="lineTwo">WEB3</span>
+                  </h1>
                 </div>
               </div>
               <div class="bottom-txt">
@@ -141,7 +146,8 @@
           </div>
         </div>
       </div>
-    </header>
+      <button id="scroll-down"></button>
+    </div>
     <section class="who-container">
       <div class="container">
         <div class="row">
@@ -328,94 +334,356 @@
         </div>
       </div>
     </section>
- <section class="contact-section" id="blog">
-      <div class="blog container">
-          <h2>Insights</h2>
-  
-            <div class="blog-card-container">
-                  <div class="blog-card">
-                     <a href="https://infrablok.com/all-about-apis-what-is-an-api-types-working-use-cases/" class="body">
-                      <img width="1053" height="592" src="https://infrablok.com/wp-content/uploads/2023/08/MicrosoftTeams-image-2023-08-18T145510.897.jpg" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="All About APIs: What Is An API, Types, Working &amp; Use Cases" decoding="async" loading="lazy">              
-                            <div class="blog-para">
-                                <span class="posted-on">September 7, 2023</span>
-                                <h3>All About APIs: What Is An API, Types, Working &amp; Use Cases</h3>
-                               
-                                </div>
-                     </a>
-                  <!-- <div class="blog-btn">
-                      <a href="https://infrablok.com/all-about-apis-what-is-an-api-types-working-use-cases/" class="btn-link">Read More</a>
-                  </div> -->
-                 </div>
-                  <div class="blog-card">
-                        <a href="https://infrablok.com/decoding-excellence-navigating-the-landscape-of-best-ai-programming-languages/" class="body">
-                            <img width="1053" height="592" src="https://infrablok.com/wp-content/uploads/2023/08/MicrosoftTeams-image-2023-08-18T145510.897.jpg" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="Decoding Excellence: Navigating The Landscape Of Best AI Programming Languages" decoding="async" loading="lazy">                   
-                             <div class="blog-para">
-                                <span class="posted-on">August 21, 2023</span>
-                                <h3>Decoding Excellence: Navigating The Landscape Of Best AI Programming Languages</h3>
-                             
-                                </div>
-                     </a>
-                    <!-- <div class="blog-btn">
-                        <a href="https://infrablok.com/decoding-excellence-navigating-the-landscape-of-best-ai-programming-languages/" class="btn-link">Read More</a>
-                    </div> -->
-                 </div>
-                  <div class="blog-card">
-                  <a href="https://infrablok.com/futuristic-approach-of-ai-blockchain-technology-how-they-complement-each-other/" class="body">
-                      <img width="1053" height="592" src="https://infrablok.com/wp-content/uploads/2023/08/MicrosoftTeams-image-2023-08-18T145510.897.jpg" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="Futuristic Approach of AI &amp; Blockchain Technology &amp; How They Complement Each Other?" decoding="async" loading="lazy">                    <div class="blog-para">
-                          <span class="posted-on">August 1, 2023</span>
-                          <h3>Futuristic Approach of AI &amp; Blockchain Technology &amp; How They Complement Each Other?</h3>
-                          
+
+    <section class="section">
+      <div class="container">
+        <div class="col-lg-10 mb-4 mb-md-5">
+          <h2 class="display-1"><span class="gradient-text">Innovating With The Latest Tech Stack</span></h2>
+          <p class="lead">Our team of tech experts develop custom solutions that drive innovation and transform businesses.</p>
+        </div>
+
+        <div class="row justify-content-between custom-tabs">
+          <div class="col-md-4 mb-4 mb-md-0">
+            <ul class="nav vertical" id="myTab" role="tablist">
+              <li class="nav-item" role="presentation">
+                <button class="nav-link active" id="web3-tab" data-bs-toggle="tab" data-bs-target="#web3" type="button" role="tab" aria-controls="web3" aria-selected="true">Web3</button>
+              </li>
+              <li class="nav-item" role="presentation">
+                <button class="nav-link" id="ai-tab" data-bs-toggle="tab" data-bs-target="#ai" type="button" role="tab" aria-controls="ai" aria-selected="false">Ai</button>
+              </li>
+              <li class="nav-item" role="presentation">
+                <button class="nav-link" id="devops-tab" data-bs-toggle="tab" data-bs-target="#devops" type="button" role="tab" aria-controls="devops" aria-selected="false">DevOps</button>
+              </li>
+              <li class="nav-item" role="presentation">
+                <button class="nav-link" id="fullstack-tab" data-bs-toggle="tab" data-bs-target="#fullstack" type="button" role="tab" aria-controls="fullstack" aria-selected="false">Full Stack</button>
+              </li>
+            </ul>
+          </div>
+          <div class="col-lg-7 col-md-8">
+            <div class="tab-content" id="myTabContent">
+              <div class="tab-pane fade show active" id="web3" role="tabpanel" aria-labelledby="web3-tab">
+                <div class="tech-stacks">
+                  <ul class="list" style="animation-delay: 0s;">
+                    <li>
+                      <div class="stack">
+                        <img src="Images/hyperledger.png" alt="Hyperledger">
                       </div>
-                  </a>
-                  <!-- <div class="blog-btn">
-                      <a href="https://infrablok.com/futuristic-approach-of-ai-blockchain-technology-how-they-complement-each-other/" class="btn-link">Read More</a>
-                  </div> -->
-                  </div>
-              
-          </div>
-  
-          <div class="blog-all d-flex">
-              <p>&nbsp;</p>
-              <a href="/blogs" class="ghost-btn">View All Posts</a>
-          </div>
-  
-     </div>
- </section>
- <footer>
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12 sub-footer">
-            <div class="left">
-              <ul>
-                <li>
-                  © 2023 Infrablok | All Rights Reserved
-                </li>
-                <li>
-                  Privacy Policy
-                </li>
-                <li>
-                  Terms & Conditions
-                </li>
-              </ul>
-            </div>
-            <div class="right">
-              <div class="img-cont">
-                <img class="me-4" src="./Images/twitter.png" alt="twitter" width="" height="auto">
-                <img src="./Images/linkdin.png" alt="twitter" width="" height="auto">
+                    </li>
+                    <li>
+                      <div class="stack">
+                        <img src="Images/solidity.png" alt="Solidity">
+                      </div>
+                    </li>
+                  </ul>
+                  <ul class="list" style="animation-delay: 1.5s;">
+                    <li>
+                      <div class="stack">
+                        <img src="Images/polygon.png" alt="Polygon">
+                      </div>
+                    </li>
+                    <li>
+                      <div class="stack">
+                        <img src="Images/fabric.png" alt="Fabric">
+                      </div>
+                    </li>
+                  </ul>
+                  <ul class="list" style="animation-delay: 2.5s;">
+                    <li>
+                      <div class="stack">
+                        <img src="Images/ethereum.png" alt="Ethereum">
+                      </div>
+                    </li>
+                    <li>
+                      <div class="stack">
+                        <img src="Images/solana.png" alt="Solana">
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div class="tab-pane fade" id="ai" role="tabpanel" aria-labelledby="ai-tab">
+                <div class="tech-stacks">
+                  <ul class="list" style="animation-delay: 0s;">
+                    <li>
+                      <div class="stack">
+                        <img src="Images/azure.png" alt="Azure">
+                      </div>
+                    </li>
+                    <li>
+                      <div class="stack">
+                        <img src="Images/google-cloud.png" alt="Google Cloud">
+                      </div>
+                    </li>
+                  </ul>
+                  <ul class="list" style="animation-delay: 1.5s;">
+                    <li>
+                      <div class="stack">
+                        <img src="Images/aws.png" alt="AWS">
+                      </div>
+                    </li>
+                    <li>
+                      <div class="stack">
+                        <img src="Images/python.png" alt="Python">
+                      </div>
+                    </li>
+                  </ul>
+                  <ul class="list" style="animation-delay: 2.5s;">
+                    <li>
+                      <div class="stack">
+                        <img src="Images/TensorFlow.png" alt="TensorFlow">
+                      </div>
+                    </li>
+                    <li>
+                      <div class="stack">
+                        <img src="Images/pytorch.png" alt="Pytorch">
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div class="tab-pane fade" id="devops" role="tabpanel" aria-labelledby="devops-tab">
+                <div class="tech-stacks">
+                  <ul class="list" style="animation-delay: 0s;">
+                    <li>
+                      <div class="stack">
+                        <img src="Images/kubernetes.png" alt="Kubernetes">
+                      </div>
+                    </li>
+                    <li>
+                      <div class="stack">
+                        <img src="Images/docker.png" alt="Docker">
+                      </div>
+                    </li>
+                  </ul>
+                  <ul class="list" style="animation-delay: 1.5s;">
+                    <li>
+                      <div class="stack">
+                        <img src="Images/terraform-2.png" alt="Terraform">
+                      </div>
+                    </li>
+                    <li>
+                      <div class="stack">
+                        <img src="Images/jenkins-1.png" alt="Jenkins">
+                      </div>
+                    </li>
+                  </ul>
+                  <ul class="list" style="animation-delay: 2.5s;">
+                    <li>
+                      <div class="stack">
+                        <img src="Images/Gitlab.png" alt="Gitlab">
+                      </div>
+                    </li>
+                    <li>
+                      <div class="stack">
+                        <img src="Images/ansible.png" alt="Ansible">
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div class="tab-pane fade" id="fullstack" role="tabpanel" aria-labelledby="fullstack-tab">
+                <div class="tech-stacks">
+                  <ul class="list" style="animation-delay: 0s;">
+                    <li>
+                      <div class="stack">
+                        <img src="Images/mean.png" alt="Mean">
+                      </div>
+                    </li>
+                    <li>
+                      <div class="stack">
+                        <img src="Images/mern.png" alt="Mern">
+                      </div>
+                    </li>
+                  </ul>
+                  <ul class="list" style="animation-delay: 1.5s;">
+                    <li>
+                      <div class="stack">
+                        <img src="Images/angularjs.png" alt="Angular js">
+                      </div>
+                    </li>
+                    <li>
+                      <div class="stack">
+                        <img src="Images/nodejs.png" alt="Node Js">
+                      </div>
+                    </li>
+                  </ul>
+                  <ul class="list" style="animation-delay: 2.5s;">
+                    <li>
+                      <div class="stack">
+                        <img src="Images/dot-net.png" alt="Dot Net">
+                      </div>
+                    </li>
+                    <li>
+                      <div class="stack">
+                        <img src="Images/java.png" alt="Java">
+                      </div>
+                    </li>
+                  </ul>
+                </div>
               </div>
             </div>
-            </div>
+          </div>
         </div>
-    </div>
- </footer>
+      </div>
+    </section>
+
+    <section class="section testimonials">
+      <div class="container">
+        <div class="heading">
+          <h4>Testimonials</h4>
+        </div>
+      </div>
+      <div class="pattern">
+        <div class="container">
+          <div class="slider">
+            <div class="swiper">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                  <div class="testimonial">
+                    <blockquote>
+                      <p>Infrablok have been a dream partner for Kalibra - proactive, reliable, flexible and consistent. We were particularly impressed with the quality and speed of recruitment, and our business leads’ responsiveness and accountability. We look forward to a long and productive partnership.</p>
+                    </blockquote>
+                    <div class="author">
+                      <figure class="image">
+                        <img src="Images/ivan.png" alt="person">
+                      </figure>
+                      <div class="details">
+                        <p class="name">Ivan Vatchkov</p>
+                        <p class="designation">Co-founder & CEO Kalibra</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <div class="testimonial">
+                    <blockquote>
+                      <p>Infrablok have been a dream partner for Kalibra - proactive, reliable, flexible and consistent. We were particularly impressed with the quality and speed of recruitment, and our business leads’ responsiveness and accountability. We look forward to a long and productive partnership.</p>
+                    </blockquote>
+                    <div class="author">
+                      <figure class="image">
+                        <img src="Images/ivan.png" alt="person">
+                      </figure>
+                      <div class="details">
+                        <p class="name">Ivan Vatchkov</p>
+                        <p class="designation">Co-founder & CEO Kalibra</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <div class="testimonial">
+                    <blockquote>
+                      <p>Infrablok have been a dream partner for Kalibra - proactive, reliable, flexible and consistent. We were particularly impressed with the quality and speed of recruitment, and our business leads’ responsiveness and accountability. We look forward to a long and productive partnership.</p>
+                    </blockquote>
+                    <div class="author">
+                      <figure class="image">
+                        <img src="Images/ivan.png" alt="person">
+                      </figure>
+                      <div class="details">
+                        <p class="name">Ivan Vatchkov</p>
+                        <p class="designation">Co-founder & CEO Kalibra</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="slider-nav">
+                <button class="swiper-button-prev"></button>
+                <button class="swiper-button-next"></button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section insights">
+      <div class="container">
+        <div class="row mb-4">
+          <div class="col-md mb-4 mb-md-0">
+            <div class="heading mb-0">
+              <h4>Insights</h4>
+            </div>
+          </div>
+          <div class="col-md-auto">
+            <a href="#" class="btn btn-primary rounded-0 button1">View all Posts</a>
+          </div>
+        </div>
+        <div class="cards-wrapper">
+          <div class="row">
+            <div class="col-lg-4 col-md-6 mb-4">
+              <a href="#" class="card1">
+                <figure class="image">
+                  <img src="Images/insight.jpg" alt="insight image">
+                </figure>
+                <div class="description">
+                  <p class="date">September 7, 2023</p>
+                  <h4 class="title">Decoding Excellence: Navigating The Landscape Of Best AI Programming Languages</h4>
+                </div>
+              </a>
+            </div>
+            <div class="col-lg-4 col-md-6 mb-4">
+              <a href="#" class="card1">
+                <figure class="image">
+                  <img src="Images/insight.jpg" alt="insight image">
+                </figure>
+                <div class="description">
+                  <p class="date">September 7, 2023</p>
+                  <h4 class="title">Decoding Excellence: Navigating The Landscape Of Best AI Programming Languages</h4>
+                </div>
+              </a>
+            </div>
+            <div class="col-lg-4 col-md-6 mb-4">
+              <a href="#" class="card1">
+                <figure class="image">
+                  <img src="Images/insight.jpg" alt="insight image">
+                </figure>
+                <div class="description">
+                  <p class="date">September 7, 2023</p>
+                  <h4 class="title">Decoding Excellence: Navigating The Landscape Of Best AI Programming Languages</h4>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <footer>
+       <div class="container">
+           <div class="row">
+               <div class="col-md-12 sub-footer">
+               <div class="left">
+                 <ul>
+                   <li>
+                     © 2023 Infrablok | All Rights Reserved
+                   </li>
+                   <li>
+                     Privacy Policy
+                   </li>
+                   <li>
+                     Terms & Conditions
+                   </li>
+                 </ul>
+               </div>
+               <div class="right">
+                 <div class="img-cont">
+                   <img class="me-4" src="./Images/twitter.png" alt="twitter" width="" height="auto">
+                   <img src="./Images/linkdin.png" alt="twitter" width="" height="auto">
+                 </div>
+               </div>
+               </div>
+           </div>
+       </div>
+    </footer>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
-<script
-src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
-integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
-crossorigin="anonymous"
-></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    crossorigin="anonymous"
+    ></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
     <script src="js/infra.js"></script>
   </body>
 </html>

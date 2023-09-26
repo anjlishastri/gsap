@@ -1,3 +1,68 @@
+@font-face {
+  font-family: "Aspekta 500";
+  src: url("../fonts/aspekta-500.eot");
+  src: url("../fonts/aspekta-500.eot?#iefix") format("embedded-opentype"),
+    url("../fonts/aspekta-500.woff2") format("woff2"),
+    url("../fonts/aspekta-500.woff") format("woff"),
+    url("../fonts/aspekta-500.ttf") format("truetype"),
+    url("../fonts/aspekta-500.svg#aspekta-500") format("svg");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Aspekta 450";
+  src: url("../fonts/aspekta-450.eot");
+  src: url("../fonts/aspekta-450.eot?#iefix") format("embedded-opentype"),
+    url("../fonts/aspekta-450.woff2") format("woff2"),
+    url("../fonts/aspekta-450.woff") format("woff"),
+    url("../fonts/aspekta-450.ttf") format("truetype"),
+    url("../fonts/aspekta-450.svg#aspekta-450") format("svg");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Aspekta 400";
+  src: url("../fonts/aspekta-400.eot");
+  src: url("../fonts/aspekta-400.eot?#iefix") format("embedded-opentype"),
+    url("../fonts/aspekta-400.woff2") format("woff2"),
+    url("../fonts/aspekta-400.woff") format("woff"),
+    url("../fonts/aspekta-400.ttf") format("truetype"),
+    url("../fonts/aspekta-400.svg#aspekta-400") format("svg");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Aspekta 300";
+  src: url("../fonts/aspekta-300.eot");
+  src: url("../fonts/aspekta-300.eot?#iefix") format("embedded-opentype"),
+    url("../fonts/aspekta-300.woff2") format("woff2"),
+    url("../fonts/aspekta-300.woff") format("woff"),
+    url("../fonts/aspekta-300.ttf") format("truetype"),
+    url("../fonts/aspekta-300.svg#aspekta-300") format("svg");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Aspekta 600";
+  src: url("../fonts/aspekta-600.eot");
+  src: url("../fonts/aspekta-600.eot?#iefix") format("embedded-opentype"),
+    url("../fonts/aspekta-600.woff2") format("woff2"),
+    url("../fonts/aspekta-600.woff") format("woff"),
+    url("../fonts/aspekta-600.ttf") format("truetype"),
+    url("../fonts/aspekta-600.svg#aspekta-600") format("svg");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
 * {
   box-sizing: border-box;
 }
@@ -5,12 +70,13 @@ body {
   margin: 0;
   padding: 0;
   background-color: #05121f;
-  font-family: "Roboto", sans-serif;
+  font-family: "Aspekta 400";
   color: #fff;
   overflow-x: hidden;
 }
 ul{
   margin:0;
+  overflow-x: hidden;
 }
 .blue-text {
   color: #0ededa;
@@ -19,7 +85,14 @@ ul{
   justify-content: center;
 }
 .navbar {
-  background-color: #05121f;
+  background-color: rgba(5, 18, 31, 0.1);
+  backdrop-filter: blur(50px);
+  position: fixed;
+  left: 0px;
+  top: 0px;
+  width: 100%;
+  z-index: 99;
+  padding: 16px 0px;
 }
 .nav-item,
 .navbar-nav {
@@ -33,6 +106,7 @@ ul{
   font-weight: 500;
   line-height: normal;
   position: relative;
+  font-family: "Aspekta 500";
 }
 /* .nav-link:before {
     position:absolute;
@@ -54,6 +128,7 @@ ul{
   } */
 .nav-btns {
   display: flex;
+  gap: 10px;
 }
 .button-1 {
   color: #fff;
@@ -69,6 +144,7 @@ ul{
   background-position: 0%;
   -webkit-transition: background 300ms ease-in-out;
   transition: background 300ms ease-in-out;
+  font-family: "Aspekta 500";
 }
 .button-1:hover {
   background-position: 100%;
@@ -93,6 +169,7 @@ ul{
   padding: 8px 16px;
   color: #fff;
   text-decoration: none;
+  font-family: "Aspekta 500";
 }
 .start-btn a {
   color: #fff;
@@ -101,35 +178,6 @@ ul{
   font-style: normal;
   font-weight: 500;
   line-height: 20px;
-}
-header {
-  background-image: url(../Images/bg-infra.png);
-  background-size: cover;
-  background-repeat: no-repeat;
-  height: 80vh;
-}
-.text-area {
-  position: relative;
-}
-header .text-area {
-  width: 80%;
-  margin: 0 auto;
-  margin-top: 120px;
-}
-header h4 {
-  color: #a1a6aa;
-  font-size: 48px;
-  font-style: normal;
-  font-weight: 500;
-  line-height: normal;
-  margin-bottom:20px;
-}
-header h1 {
-  color: #fff;
-  font-size: 111px;
-  font-style: normal;
-  font-weight: 500;
-  line-height: normal;
 }
 
 /* cursor */
@@ -186,61 +234,134 @@ height:20px;
   font-style: normal;
   font-weight: 300;
   line-height: 43px;
+  font-family: "Aspekta 300";
 }
-/* gsap */
-.line {
-  /* width: 70%;
-  height: 90px; */
-  /* position: relative; */
-  overflow: hidden;
-}
-/* .line, .lineOne, .lineTwo {
-    position: absolute;
-    top: 0;
-  } */
-.line span {
-  position: absolute;
-  font-size: 5rem;
-  line-height: 4.2rem;
-}
-.lineOne {
-  /* width: 70%;
-  height: 90px; */
-  /* position: relative; */
-  overflow: hidden;
-}
-.lineOne span {
-  position: absolute;
 
-  font-size: 5rem;
-  line-height: 4.2rem;
-}
-.lineTwo {
-  /* width: 70%;
-  height: 90px; */
-  /* position: relative; */
-  overflow: hidden;
-}
-.lineTwo span {
-  position: absolute;
-  font-size: 5rem;
-  line-height: 4.2rem;
-}
-.main {
+/* animated-text */
+#animated-text {
   display: flex;
   flex-direction: column;
   position: relative;
-  min-height: 90px;
+  min-height: 68px;
   overflow: hidden;
   text-transform: uppercase;
+  transition: all 0.5s ease-in-out;
+  margin: 25px 0px 15px;
 }
 
-.main h1{
+#animated-text h1 {
   margin-bottom: 0px;
+  overflow: hidden;
 }
 
-.main span:not([style]){
+#animated-text h1 span {
+  position: absolute;
+}
+
+#animated-text span:not([style]) {
   opacity: 0;
+}
+
+#animated-text h1 span:not([style]):first-child {
+  opacity: 1;
+}
+
+/* banner */
+#banner {
+  background-image: url(../Images/bg-infra.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+}
+
+.text-area {
+  position: relative;
+}
+
+#banner .text-area {
+  width: 80%;
+  margin: 0 auto;
+  padding: 0px 15px;
+}
+#banner h4 {
+  color: #a1a6aa;
+  font-size: 48px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  font-family: "Aspekta 500";
+}
+#banner h1 {
+  color: #fff;
+  font-size: 5rem;
+  line-height: 4.2rem;
+  font-style: normal;
+  font-weight: 500;
+  font-family: "Aspekta 500";
+}
+
+#banner .backgrounds .bg {
+  position: absolute;
+  left: 0px;
+  bottom: 0;
+  /* height: 100%; */
+  width: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
+}
+
+#banner .backgrounds .bg::before {
+  content: "";
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+}
+
+#banner .backgrounds .bg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+#scroll-down {
+  width: 30px;
+  height: 50px;
+  border: 2px solid #fff;
+  border-radius: 60px;
+  position: absolute;
+  left: 50%;
+  bottom: 20px;
+  transform: translateX(-50%);
+  background: transparent;
+}
+#scroll-down::before {
+  content: "";
+  width: 4px;
+  height: 10px;
+  position: absolute;
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #fff;
+  border-radius: 10px;
+  opacity: 1;
+  animation: wheel 1.5s infinite;
+}
+
+@keyframes wheel {
+  to {
+    opacity: 0;
+    top: 30px;
+  }
 }
 
 /* scroll */
@@ -256,7 +377,7 @@ height:20px;
   display:flex;
   justify-content: space-between;
   width:80%;
-  margin-top:50px;
+  margin-top:20px;
 }
 .text{
   width:60%;
@@ -293,6 +414,7 @@ letter-spacing: -2.8px;
 background: -webkit-linear-gradient(121deg, #00FEAF -32.59%, #1363DF 87.07%);
 -webkit-background-clip: text;
 -webkit-text-fill-color: transparent;
+font-family: "Aspekta 300";
 }
 .textWrap p{
   font-size: 40px;
