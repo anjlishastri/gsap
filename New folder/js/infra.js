@@ -33,7 +33,8 @@
       gsap.to(circle, {
         duration: 0.45,
         scale: 2,
-        fill: "#feca57",
+        fill: "#0ededa",
+        opacity: 0.8,
         ease: "Power2.easeOut",
       });
     });
@@ -43,7 +44,7 @@
         duration: 0.3,
         scale: 0.5,
         delay: 0.2,
-        fill: "#f368e0",
+        fill: "#1363df",
         ease: "Power2.easeIn",
       });
     });
