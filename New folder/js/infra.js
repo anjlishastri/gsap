@@ -1,3 +1,5 @@
+gsap.registerPlugin(ScrollTrigger);
+
 (function () {
   const dot = document.querySelector(".dot");
   const circle = document.querySelector(".dot circle");
@@ -72,50 +74,6 @@
   }
 })();
 // Text
-
-// function textAnimaiton(text, bg){
-//   const titleTl = new TimelineMax();
-
-//   titleTl.from(text, {
-//     ease: "none",
-//     yPercent: 100,
-//     duration: .4,
-//     onUpdate: function(){
-//       let target = this.targets()[0];
-//       document.querySelector("#animated-text").style.height = `${target.clientHeight}px`;
-//     },
-//   }).to(text, {
-//     ease: "none",
-//     yPercent: -100,
-//     duration: .4,
-//     delay: .5,
-//   }).fromTo(bg, {
-//     ease: "none",
-//     duration: .5,
-//     backgroundPosition: "0 0",
-//     height: 0,
-//     bottom: 0,
-//   }, {
-//     ease: "none",
-//     duration: .5,
-//     backgroundPosition: "0 50%",
-//     height: "100%",
-//     top: 0,
-//   }, "-=1.8").to(bg, {
-//     ease: "none",
-//     backgroundPosition: "0 100%",
-//     height: 0,
-//     bottom: 0,
-//   });
-
-//   return titleTl;
-// }
-
-// const masterTl = new TimelineMax()
-// masterTl.add(textAnimaiton("#animated-text .line", "#banner .backgrounds .ai"), "-=.8")
-// .add(textAnimaiton("#animated-text .lineOne", "#banner .backgrounds .ml"), "-=.8")
-// .add(textAnimaiton("#animated-text .lineTwo", "#banner .backgrounds .web3"), "-=.8");
-
 const titleTl = new TimelineMax({repeat: -1});
 
 titleTl.from("#animated-text .line", {
@@ -195,8 +153,10 @@ titleTl.from("#animated-text .line", {
 
 // scroll down 
 let scrollDownBtn = document.getElementById("scroll-down");
+let banner = document.getElementById("banner");
+
 scrollDownBtn?.addEventListener("click", function(){
-  window.scroll(false, banner?.clientHeight)
+  window.scrollTo(0, banner?.clientHeight)
 });
 
 const swiper = new Swiper(".slider .swiper", {
@@ -211,9 +171,6 @@ const swiper = new Swiper(".slider .swiper", {
 // Text
 
 // scroll
-
-gsap.registerPlugin(ScrollTrigger);
-
 let sections = gsap.utils.toArray(".panel");
 
 gsap.to(sections, {
@@ -229,7 +186,6 @@ gsap.to(sections, {
     end: "+=4000",
   }
 });
-gsap.registerPlugin(ScrollTrigger);
 
 let section = gsap.utils.toArray(".card");
 
@@ -265,6 +221,38 @@ gsap.to(section, {
 // 	x:100
 // })
 
+function setLogoPattern(){
+  gsap.set(".logo-pattern", {
+    width: 1,
+    modifiers: {
+      width: function() {
+        let leftOffset = this.targets()[0].getBoundingClientRect().left;
+        return (`${window.innerWidth - leftOffset}px`);
+      }
+    },
+  });
+}
 
+setLogoPattern();
 
+window.addEventListener("resize", setLogoPattern);
 
+gsap.to(".logo-pattern #horizontal-line", {
+  width: "100%",
+  scrollTrigger: {
+    trigger: ".logo-pattern #horizontal-line",
+    start: "clamp(top top+=80%)",
+    end: "clamp(top top+=50%)",
+    scrub: .5,
+  }
+});
+
+gsap.to(".logo-pattern #vertical-line", {
+  height: "100%",
+  scrollTrigger: {
+    trigger: ".logo-pattern #vertical-line",
+    start: "clamp(top top+=50%)",
+    end: "clamp(bottom top+=10%)",
+    scrub: .5,
+  }
+});
