@@ -171,21 +171,46 @@ const swiper = new Swiper(".slider .swiper", {
 // Text
 
 // scroll
-let sections = gsap.utils.toArray(".panel");
+gsap.registerPlugin(ScrollTrigger);
+  ScrollTrigger.saveStyles(".mobile, .desktop");
+  ScrollTrigger.matchMedia({
+  "(min-width: 800px)": function() {
+    let section = gsap.utils.toArray(".card");
 
-gsap.to(sections, {
-  xPercent: -75 * (sections.length - 1),
-  ease: "none",
-  scrollTrigger: {
-    trigger: ".rating-container",
-    pin: true,
-    scrub: 1,
-	// markers:true,
-    snap: 1 / (sections.length - 1),
-    // base vertical scrolling on how wide the container is so it feels more natural.
-    end: "+=4000",
+    gsap.to(section, {
+      xPercent: -75 * (section.length - 1),
+      ease: "none",
+      scrollTrigger: {
+        trigger: ".card-container",
+        pin: true,
+        scrub: 1,
+      // markers:true,
+        snap: 1 / (sections.length - 1),
+
+        // base vertical scrolling on how wide the container is so it feels more natural.
+        end: "+=4000",
+      }
+  });
+},
+  "(max-width: 799px)": function() {
+    let section = gsap.utils.toArray(".card");
+
+    gsap.to(section, {
+      xPercent: none,
+      ease: "none",
+      scrollTrigger: {
+        trigger: "none",
+        pin: true,
+        scrub: 1,
+        markers:true,
+        // snap: 1 / (sections.length - 1),
+
+        // base vertical scrolling on how wide the container is so it feels more natural.
+        end: "+=4000",
+      }
+    });
   }
-});
+})
 
 let section = gsap.utils.toArray(".card");
 

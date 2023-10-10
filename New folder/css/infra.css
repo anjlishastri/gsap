@@ -595,5 +595,26 @@ margin-right:56px;
   .card-api .card-right{
     width:100%;
   }
+  .rating-box{
+    margin-right:0;
+  }
+  .numberWrap h4{
+
+  }
+  .textWrap p{
+    font-size: 32px;
+  }
+  .bottom-txt{
+    flex-direction: column;
+  }
+  .text{
+    width:100%;
+  }
+  .who-container .sub-text{
+    width:100%;
+  }
+  .who-container .sub-text p{
+    font-size:18px;
+  }
   
 }
