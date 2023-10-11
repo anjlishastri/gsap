@@ -4,6 +4,10 @@ button{
   padding: 0px;
 }
 
+.bg-theme-primary{
+  background: #05121F;
+}
+
 .lead {
   font-size: clamp(18px, 2vw, 24px);
   line-height: 1.3;

@@ -77,7 +77,7 @@ gsap.registerPlugin(ScrollTrigger);
 const titleTl = new TimelineMax({repeat: -1});
 
 titleTl.from("#animated-text .line", {
-	yPercent: 100,
+	yPercent: 200,
   duration: .4,
   onUpdate: function(){
     let target = this.targets()[0];
@@ -101,7 +101,7 @@ titleTl.from("#animated-text .line", {
   height: 0,
   bottom: 0,
 }).from("#animated-text .lineOne", {
-	yPercent: 100,
+	yPercent: 200,
   duration: .4,
   onUpdate: function(){
     let target = this.targets()[0];
@@ -125,7 +125,7 @@ titleTl.from("#animated-text .line", {
   height: 0,
   bottom: 0,
 }).from("#animated-text .lineTwo", {
-	yPercent: 100,
+	yPercent: 200,
   duration: .4,
   onUpdate: function(){
     let target = this.targets()[0];
@@ -171,46 +171,21 @@ const swiper = new Swiper(".slider .swiper", {
 // Text
 
 // scroll
-gsap.registerPlugin(ScrollTrigger);
-  ScrollTrigger.saveStyles(".mobile, .desktop");
-  ScrollTrigger.matchMedia({
-  "(min-width: 800px)": function() {
-    let section = gsap.utils.toArray(".card");
+let sections = gsap.utils.toArray(".panel");
 
-    gsap.to(section, {
-      xPercent: -75 * (section.length - 1),
-      ease: "none",
-      scrollTrigger: {
-        trigger: ".card-container",
-        pin: true,
-        scrub: 1,
-      // markers:true,
-        snap: 1 / (sections.length - 1),
-
-        // base vertical scrolling on how wide the container is so it feels more natural.
-        end: "+=4000",
-      }
-  });
-},
-  "(max-width: 799px)": function() {
-    let section = gsap.utils.toArray(".card");
-
-    gsap.to(section, {
-      xPercent: none,
-      ease: "none",
-      scrollTrigger: {
-        trigger: "none",
-        pin: true,
-        scrub: 1,
-        markers:true,
-        // snap: 1 / (sections.length - 1),
-
-        // base vertical scrolling on how wide the container is so it feels more natural.
-        end: "+=4000",
-      }
-    });
+gsap.to(sections, {
+  xPercent: -75 * (sections.length - 1),
+  ease: "none",
+  scrollTrigger: {
+    trigger: ".rating-container",
+    pin: true,
+    scrub: 1,
+	// markers:true,
+    snap: 1 / (sections.length - 1),
+    // base vertical scrolling on how wide the container is so it feels more natural.
+    end: "+=4000",
   }
-})
+});
 
 let section = gsap.utils.toArray(".card");
 
@@ -280,4 +255,20 @@ gsap.to(".logo-pattern #vertical-line", {
     end: "clamp(bottom top+=10%)",
     scrub: .5,
   }
+});
+
+// card-api
+let navbarHeight = document.querySelector("nav.navbar")?.clientHeight;
+let cardApi = gsap.utils.toArray(".card-api");
+
+cardApi.forEach(element => {
+  gsap.to(element, {
+    scrollTrigger: {
+      trigger: element,
+      start: `top top+=${navbarHeight}`,
+      endTrigger: ".card-api-wrapper",
+      pin: true,
+      pinSpacing: false,
+    }
+  });
 });
