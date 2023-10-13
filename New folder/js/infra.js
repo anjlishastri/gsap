@@ -1,4 +1,5 @@
 gsap.registerPlugin(ScrollTrigger);
+gsap.registerPlugin(Observer);
 
 (function () {
   const dot = document.querySelector(".dot");
@@ -181,7 +182,7 @@ gsap.to(sections, {
     pin: true,
     scrub: 1,
 	// markers:true,
-    snap: 1 / (sections.length - 1),
+    // snap: 1 / (sections.length - 1),
     // base vertical scrolling on how wide the container is so it feels more natural.
     end: "+=4000",
   }
@@ -197,7 +198,7 @@ gsap.to(section, {
     pin: true,
     scrub: 1,
 	// markers:true,
-    snap: 1 / (sections.length - 1),
+    // snap: 1 / (sections.length - 1),
 
     // base vertical scrolling on how wide the container is so it feels more natural.
     end: "+=4000",
@@ -270,5 +271,29 @@ cardApi.forEach(element => {
       pin: true,
       pinSpacing: false,
     }
+  });
+});
+
+// animation
+let animationCard = document.querySelectorAll("[data-animation='pointer']");
+
+animationCard.forEach(element => {
+  element.addEventListener("mousemove", (e) => {
+    let el = e.currentTarget;
+    var relX = e.clientX;
+    var relY = e.clientY;
+  
+    TweenMax.to(el, .5, {
+      x: (relX - window.innerWidth / 2) / window.innerWidth * -100,
+      y: (relY - window.innerHeight / 2) / window.innerHeight * -100
+    });
+  });
+
+  element.addEventListener("mouseleave", (e) => {
+    let el = e.currentTarget;
+    TweenMax.to(el, .5, {
+      x: 0,
+      y: 0
+    });
   });
 });

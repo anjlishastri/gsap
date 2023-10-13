@@ -516,7 +516,7 @@ button{
   top: -200px;
 }
 
-@media(max-width: 767px){
+@media(max-width: 991px){
   .insights{
     padding: 80px 0px 30px;
   }
@@ -601,6 +601,7 @@ button{
 
 .industries{
   position: relative;
+  overflow: hidden;
 }
 
 .industries .logo-pattern{
