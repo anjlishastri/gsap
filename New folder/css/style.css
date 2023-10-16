@@ -737,3 +737,23 @@ button{
     max-height: 30px;
   }
 }
+
+.parallax-backgrounds{
+  position: relative;
+  overflow: hidden;
+}
+
+.parallax-backgrounds .background-image img{
+  width: 100%;
+  object-fit: cover;
+  transform: scale(1.08);
+}
+.parallax-backgrounds .image{
+  width: 500px;
+  object-fit: cover;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+}

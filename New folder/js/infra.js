@@ -293,7 +293,45 @@ animationCard.forEach(element => {
     let el = e.currentTarget;
     TweenMax.to(el, .5, {
       x: 0,
-      y: 0
+      y: 0,
+      ease: "back.out(3)",
+    });
+  });
+});
+
+let parallaxBg = document.querySelectorAll(".parallax-backgrounds");
+let bg = document.querySelectorAll(".parallax-backgrounds .background-image");
+let fg = document.querySelectorAll(".parallax-backgrounds .image");
+
+parallaxBg.forEach(element => {
+  element.addEventListener("mousemove", (e) => {
+    let el = bg;
+    var relX = e.clientX;
+    var relY = e.clientY;
+  
+    TweenMax.to(el, .5, {
+      x: (relX - window.innerWidth / 2) / window.innerWidth * -100,
+      y: (relY - window.innerHeight / 2) / window.innerHeight * -100
+    });
+  });
+
+  element.addEventListener("mousemove", (e) => {
+    let el = fg;
+    var relX = e.clientX;
+    var relY = e.clientY;
+  
+    TweenMax.to(el, .5, {
+      x: (relX - window.innerWidth / 2) / window.innerWidth * 100,
+      y: (relY - window.innerHeight / 2) / window.innerHeight * 100
+    });
+  });
+
+  element.addEventListener("mouseleave", (e) => {
+    let el = parallaxBg[0].children;
+    TweenMax.to(el, .5, {
+      x: 0,
+      y: 0,
+      ease: "back.out(3)",
     });
   });
 });
