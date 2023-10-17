@@ -171,57 +171,90 @@ const swiper = new Swiper(".slider .swiper", {
 
 // Text
 
-// scroll
-let sections = gsap.utils.toArray(".panel");
+// scroll-starts
+gsap.registerPlugin(ScrollTrigger);
+  ScrollTrigger.saveStyles(".mobile, .desktop");
+  ScrollTrigger.matchMedia({
+  "(min-width: 800px)": function() {
+    let sections = gsap.utils.toArray(".panel");
 
-gsap.to(sections, {
-  xPercent: -75 * (sections.length - 1),
-  ease: "none",
-  scrollTrigger: {
-    trigger: ".rating-container",
-    pin: true,
-    scrub: 1,
-	// markers:true,
-    // snap: 1 / (sections.length - 1),
-    // base vertical scrolling on how wide the container is so it feels more natural.
-    end: "+=4000",
+    gsap.to(sections, {
+      xPercent: -75 * (sections.length - 1),
+      ease: "none",
+      scrollTrigger: {
+        trigger: ".rating-container",
+        pin: true,
+        scrub: 1,
+      // markers:true,
+        snap: 1 / (sections.length - 1),
+
+        // base vertical scrolling on how wide the container is so it feels more natural.
+        end: "+=4000",
+      }
+  });
+},
+  "(max-width: 799px)": function() {
+    let sections = gsap.utils.toArray(".panel");
+
+    gsap.to(sections, {
+      xPercent: none,
+      ease: "none",
+      scrollTrigger: {
+        trigger: "none",
+        pin: true,
+        scrub: 1,
+        markers:true,
+        // snap: 1 / (sections.length - 1),
+
+        // base vertical scrolling on how wide the container is so it feels more natural.
+        end: "+=4000",
+      }
+    });
   }
-});
+})
 
-let section = gsap.utils.toArray(".card");
+gsap.registerPlugin(ScrollTrigger);
+  ScrollTrigger.saveStyles(".mobile, .desktop");
+  ScrollTrigger.matchMedia({
+  "(min-width: 800px)": function() {
+    let sections = gsap.utils.toArray(".card");
 
-gsap.to(section, {
-  xPercent: -75 * (sections.length - 1),
-  ease: "none",
-  scrollTrigger: {
-    trigger: ".card-container",
-    pin: true,
-    scrub: 1,
-	// markers:true,
-    // snap: 1 / (sections.length - 1),
+    gsap.to(sections, {
+      xPercent: -75 * (sections.length - 1),
+      ease: "none",
+      scrollTrigger: {
+        trigger: ".card-container",
+        pin: true,
+        scrub: 1,
+      // markers:true,
+        snap: 1 / (sections.length - 1),
 
-    // base vertical scrolling on how wide the container is so it feels more natural.
-    end: "+=4000",
+        // base vertical scrolling on how wide the container is so it feels more natural.
+        end: "+=4000",
+      }
+  });
+},
+  "(max-width: 799px)": function() {
+    let sections = gsap.utils.toArray(".card");
+
+    gsap.to(sections, {
+      xPercent: 0,
+      ease: "none",
+      scrollTrigger: {
+        trigger: "none",
+        pin: true,
+        scrub: 1,
+      markers:true,
+        snap: 1 / (sections.length - 1),
+
+        // base vertical scrolling on how wide the container is so it feels more natural.
+        end: "+=4000",
+      }
+    });
   }
-});
-// let tl1 = gsap.timeline({
-// 	  x:-100,
-// 	scrollTrigger: {
-// 		    trigger: ".rating-container",
-// 		    pin: true,
-// 			start:"left 80%",
-// 			end: "top 20%",
-// 		    scrub: true,
-// 			markers:true,
-			
-		    
-		 
-// 		  }
-// })
-// tl1.to('.rating-container',{
-// 	x:100
-// })
+})
 
+// end
 function setLogoPattern(){
   gsap.set(".logo-pattern", {
     width: 1,
